@@ -19,7 +19,7 @@ model = None
 def split_audio_whisper(audio_path, audio_name, target_dir='processed'):
     global model
     if model is None:
-        model = WhisperModel(model_size, device=os.environ.get('PYTORCH_DEVICE', 'cuda'), compute_type=os.environ('PYTORCH_COMPUTE_TYPE', 'float32'))
+        model = WhisperModel(model_size, device=os.environ.get('PYTORCH_DEVICE', 'cuda'), compute_type=os.environ.get('PYTORCH_COMPUTE_TYPE', 'float32'))
         #model = WhisperModel(model_size, device="cuda", compute_type="float32")
         #model = WhisperModel(model_size, device="cpu", compute_type="float16")
     audio = AudioSegment.from_file(audio_path)
